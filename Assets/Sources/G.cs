@@ -17,7 +17,7 @@ public class G : MonoBehaviour
 
     // Rate limiting variables
     private float timeSinceLastSend = 0f;
-    private const float sendInterval = 1f / 30f; // 30 FPS
+    private const float sendInterval = 1f / 24f; // 24 FPS
 
 
     void Start()
@@ -66,7 +66,7 @@ public class G : MonoBehaviour
             // Reset the timer
             timeSinceLastSend = 0f;
 
-            int inputX = (int)uiInputX.value;
+            int inputX = 180 - ((int)uiInputX.value) - 10;
             int inputY = (int)uiInputY.value;
             byte[] responseData = {
                 (byte)inputX, // X input
